@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0309965428A128FD00809CC7 /* DashboardStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0309965328A128FD00809CC7 /* DashboardStatusView.swift */; };
+		0309965728A12D2300809CC7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0309965628A12D2300809CC7 /* SnapKit */; };
 		A7C3C7DA28A11AE20086F3CC /* WederApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3C7D928A11AE20086F3CC /* WederApp.swift */; };
 		A7C3C7DC28A11AE20086F3CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3C7DB28A11AE20086F3CC /* ContentView.swift */; };
 		A7C3C7DE28A11AE40086F3CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C3C7DD28A11AE40086F3CC /* Assets.xcassets */; };
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0309965328A128FD00809CC7 /* DashboardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStatusView.swift; sourceTree = "<group>"; };
 		A7C3C7D628A11AE20086F3CC /* Weder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C3C7D928A11AE20086F3CC /* WederApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WederApp.swift; sourceTree = "<group>"; };
 		A7C3C7DB28A11AE20086F3CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0309965728A12D2300809CC7 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				A7C3C7E028A11AE40086F3CC /* Preview Assets.xcassets */,
+				0309965328A128FD00809CC7 /* DashboardStatusView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -146,6 +151,9 @@
 			dependencies = (
 			);
 			name = Weder;
+			packageProductDependencies = (
+				0309965628A12D2300809CC7 /* SnapKit */,
+			);
 			productName = Weder;
 			productReference = A7C3C7D628A11AE20086F3CC /* Weder.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +226,9 @@
 				Base,
 			);
 			mainGroup = A7C3C7CD28A11AE20086F3CC;
+			packageReferences = (
+				0309965528A12D2300809CC7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = A7C3C7D728A11AE20086F3CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7C3C7DC28A11AE20086F3CC /* ContentView.swift in Sources */,
+				0309965428A128FD00809CC7 /* DashboardStatusView.swift in Sources */,
 				A7C3C80428A11AF50086F3CC /* DashboardView.swift in Sources */,
 				A7C3C7DA28A11AE20086F3CC /* WederApp.swift in Sources */,
 			);
@@ -587,6 +599,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0309965528A12D2300809CC7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0309965628A12D2300809CC7 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0309965528A12D2300809CC7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A7C3C7CE28A11AE20086F3CC /* Project object */;
 }
