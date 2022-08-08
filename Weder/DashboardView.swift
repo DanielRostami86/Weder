@@ -27,45 +27,14 @@ struct DashboardView: View {
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
-            VStack {
+            VStack(alignment: .center) {
                 DashboardHeaderView(city: "Tehran")
-                DashboardLoadingStatus(loadingStatus: .loading)
+                DashboardStatusView(status: .failed)
+                    .frame(height:50)
                 Spacer()
+                
             }
             .padding()
-        }
-    }
-}
-
-struct DashboardLoadingStatus: View {
-    
-    var loadingStatus: LoadingStatus
-    
-    var body: some View {
-        HStack {
-            Circle()
-                .frame(width: 10, height: 10)
-                .foregroundColor(statusColor())
-            Text(loadingStatus.updatingTitle)
-        }
-        .frame(minWidth: 0, maxWidth: .greatestFiniteMagnitude)
-        .font(.system(size: 18))
-        .padding()
-        .foregroundColor(.white)
-        .overlay(
-            RoundedRectangle(cornerRadius: 25)
-                .stroke(Color.white, lineWidth: 1))
-        .foregroundColor(.white)
-    }
-    
-    private func statusColor() -> Color {
-        switch loadingStatus {
-        case .loading:
-            return Color.yellow
-        case .done:
-            return Color.green
-        case .failed:
-            return Color.red
         }
     }
 }
@@ -97,10 +66,7 @@ struct DashboardHeaderView: View {
                 .frame(width: 45, height: 45)
                 .rotationEffect(.degrees(90))
         }
-//        .frame(height: 50)
         .foregroundColor(.white)
-
-        .foregroundColor(.clear)
     }
 }
 
