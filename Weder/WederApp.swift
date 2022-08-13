@@ -11,7 +11,10 @@ import SwiftUI
 struct WederApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                DashboardView()
+                    .navigationBarHidden(true)
+            }
         }
     }
 }
