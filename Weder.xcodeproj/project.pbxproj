@@ -130,7 +130,6 @@
 			children = (
 				A7C3C7D928A11AE20086F3CC /* WederApp.swift */,
 				A7D7324C28A7D2300087CD3C /* Components */,
-				A7D7324A28A7CFDE0087CD3C /* Preview Content */,
 				A7D7324B28A7D2150087CD3C /* Scenes */,
 				A7D7323B28A7B35E0087CD3C /* Extensions */,
 				A7C3C7DD28A11AE40086F3CC /* Assets.xcassets */,
@@ -196,13 +195,6 @@
 				A7D7324828A7CF450087CD3C /* NextSevenDaysView.swift */,
 			);
 			path = "Next Seven Days";
-			sourceTree = "<group>";
-		};
-		A7D7324A28A7CFDE0087CD3C /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		A7D7324B28A7D2150087CD3C /* Scenes */ = {
@@ -534,7 +526,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Weder/Preview Content\"";
 				DEVELOPMENT_TEAM = 9WTKYWNVD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -563,7 +554,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Weder/Preview Content\"";
 				DEVELOPMENT_TEAM = 9WTKYWNVD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
