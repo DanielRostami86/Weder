@@ -20,8 +20,6 @@
 		A7D7324328A7BCFD0087CD3C /* WindHumidityRainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7324228A7BCFD0087CD3C /* WindHumidityRainView.swift */; };
 		A7D7324928A7CF450087CD3C /* NextSevenDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7324828A7CF450087CD3C /* NextSevenDaysView.swift */; };
 		A7D7324E28A7D3FE0087CD3C /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7324D28A7D3FE0087CD3C /* HourlyWeatherView.swift */; };
-		A7D732C928A882820087CD3C /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D732C828A882820087CD3C /* Alamofire.xcframework */; };
-		A7D732CA28A882820087CD3C /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7D732C828A882820087CD3C /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7D7335228A892560087CD3C /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D7335128A892560087CD3C /* Networking.framework */; };
 		A7D7335328A892560087CD3C /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7D7335128A892560087CD3C /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7D7335828A89D7B0087CD3C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7335728A89D7B0087CD3C /* DashboardViewModel.swift */; };
@@ -52,7 +50,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A7D7335328A892560087CD3C /* Networking.framework in Embed Frameworks */,
-				A7D732CA28A882820087CD3C /* Alamofire.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7D732C928A882820087CD3C /* Alamofire.xcframework in Frameworks */,
 				0309965728A12D2300809CC7 /* SnapKit in Frameworks */,
 				A7D7335228A892560087CD3C /* Networking.framework in Frameworks */,
 			);

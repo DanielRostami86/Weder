@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 import Combine
 
 public class Networking: APIHelper {
