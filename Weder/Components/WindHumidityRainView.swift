@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Networking
 
 public enum WindHumidityRain {
     
@@ -58,26 +59,23 @@ public enum WindHumidityRain {
 
 struct WindHumidityRainView: View {
     
-    var weather: Weather
+    var weather: CurrentWeather
     
     var body: some View {
-        
-        ZStack {
-            HStack(spacing: 25) {
-                WindHumidityRainChild(data: .wind(weather.wind_speed))
-                HorizontalSeparator()
-                WindHumidityRainChild(data: .humidity(weather.humidity))
-                HorizontalSeparator()
-                WindHumidityRainChild(data: .rain(weather.rain))
-            }
-            .padding(.horizontal, 30)
-            .padding(.vertical, 16)
-            .overlay(
-                RoundedRectangle(cornerRadius: Constants.rectangleCornerRadious)
-                    .foregroundColor(.gray)
-                    .opacity(0.15)
-            )
+        HStack(spacing: 25) {
+            WindHumidityRainChild(data: .wind(weather.wind?.speed))
+            HorizontalSeparator()
+            WindHumidityRainChild(data: .humidity(weather.main?.humidity))
+            HorizontalSeparator()
+            WindHumidityRainChild(data: .rain(14)) // Fixme no api for it
         }
+        .padding(.horizontal, 30)
+        .padding(.vertical, 16)
+        .overlay(
+            RoundedRectangle(cornerRadius: Constants.rectangleCornerRadious)
+                .foregroundColor(.gray)
+                .opacity(0.15)
+        )
     }
     
     enum Constants {

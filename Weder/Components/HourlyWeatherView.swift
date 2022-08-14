@@ -36,7 +36,7 @@ public enum WeatherCondtion {
     var imageName: String {
         switch self {
         case .sunny:
-            return ""
+            return "sunny"
         case .rainy:
             return "rainy"
         case .cloudy:
@@ -49,9 +49,8 @@ public enum WeatherCondtion {
             return ""
         }
     }
-    
 
-    static func getCondition(condition: String) -> WeatherCondtion {
+    static func getCondition(_ condition: String) -> WeatherCondtion {
         switch condition {
         case "rainy":
             return .rainy
@@ -59,6 +58,8 @@ public enum WeatherCondtion {
             return.cloudy
         case "thunder":
             return .thunder
+        case "01d":
+            return .sunny
         default:
             return .sunny
         }
@@ -72,26 +73,24 @@ struct HourlyWeatherView: View {
     var hour: Int
     
     var body: some View {
-        ZStack {
-            VStack {
-                Text("\(Int(temp)) °")
-                    .font(.body)
-                    .bold()
-                    .foregroundColor(.primary)
-                Image(WeatherCondtion.getCondition(condition: condition).imageName)
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                Text("\(hour):00")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-            }
-            .padding(.vertical, 16)
-            .padding(.horizontal, 20)
-            .overlay {
-                RoundedRectangle(cornerRadius: 30)
-                    .foregroundColor(.gray)
-                    .opacity(0.15)
-            }
+        VStack {
+            Text("\(Int(temp)) °")
+                .font(.body)
+                .bold()
+                .foregroundColor(.primary)
+            Image(WeatherCondtion.getCondition(condition).imageName)
+                .resizable()
+                .frame(width: 40, height: 40)
+            Text("\(hour):00")
+                .font(.footnote)
+                .foregroundColor(.secondary)
+        }
+        .padding(.vertical, 16)
+        .padding(.horizontal, 20)
+        .overlay {
+            RoundedRectangle(cornerRadius: 30)
+                .foregroundColor(.gray)
+                .opacity(0.15)
         }
     }
 }

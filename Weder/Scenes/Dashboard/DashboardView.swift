@@ -10,6 +10,7 @@ import UIKit
 
 struct DashboardView: View {
     
+    @ObservedObject var viewModel = DashboardViewModel()
     @State private var isSevenDayActive = false
     
     var body: some View {
@@ -21,24 +22,31 @@ struct DashboardView: View {
                 VStack(alignment: .center, spacing: 10) {
                     DashboardHeaderView(city: "Tehran")
                     DashboardLoadingStatus(loadingStatus: .done)
-                    Image("cloudy")
-                        .resizable()
-                        .frame(width: weatherImageWidth(size: geometry.size),
-                               height: weatherImageWidth(size: geometry.size))
-                        .shadow(color: .primary, radius: 100, x: 0, y: 0)
+                    if let icon = viewModel.weather?.weather?[0].icon {
+                        Image(WeatherCondtion.getCondition(icon).imageName)
+                            .resizable()
+                            .frame(width: weatherImageWidth(size: geometry.size),
+                                   height: weatherImageWidth(size: geometry.size))
+                            .shadow(color: .primary, radius: 100, x: 0, y: 0)
+                    }
                     VStack(spacing: 0) {
                         HStack(alignment: .top) {
-                            Text("20")
-                                .font(.system(size: 90))
-                                .bold()
-                            Text("°")
-                                .font(.largeTitle)
-                                .offset(x: -8, y: 8)
+                            if let temp = viewModel.weather?.main?.temp {
+                                Text(String(temp))
+                                    .font(.system(size: 90))
+                                    .bold()
+                                Text("°")
+                                    .font(.largeTitle)
+                                    .offset(x: -8, y: 8)
+                            }
+                   
                         }
                         .offset(x: 8)
-                        Text("Weather condition")
-                            .foregroundColor(.gray)
-                            .font(.title2)
+                        if let desc = viewModel.weather?.weather?[0].description {
+                            Text(desc)
+                                .foregroundColor(.gray)
+                                .font(.title2)
+                        }
                     }
                     Spacer()
                     WindHumidityRainView(weather: .sample())

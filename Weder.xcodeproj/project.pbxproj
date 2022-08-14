@@ -18,9 +18,13 @@
 		A7D7323D28A7B3730087CD3C /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7323C28A7B3730087CD3C /* View+Ext.swift */; };
 		A7D7324028A7B43E0087CD3C /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7323F28A7B43E0087CD3C /* DashboardHeaderView.swift */; };
 		A7D7324328A7BCFD0087CD3C /* WindHumidityRainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7324228A7BCFD0087CD3C /* WindHumidityRainView.swift */; };
-		A7D7324528A7BDA80087CD3C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7324428A7BDA80087CD3C /* Weather.swift */; };
 		A7D7324928A7CF450087CD3C /* NextSevenDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7324828A7CF450087CD3C /* NextSevenDaysView.swift */; };
 		A7D7324E28A7D3FE0087CD3C /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7324D28A7D3FE0087CD3C /* HourlyWeatherView.swift */; };
+		A7D732C928A882820087CD3C /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D732C828A882820087CD3C /* Alamofire.xcframework */; };
+		A7D732CA28A882820087CD3C /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7D732C828A882820087CD3C /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7D7335228A892560087CD3C /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D7335128A892560087CD3C /* Networking.framework */; };
+		A7D7335328A892560087CD3C /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7D7335128A892560087CD3C /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7D7335828A89D7B0087CD3C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7335728A89D7B0087CD3C /* DashboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A7D732CB28A882820087CD3C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A7D7335328A892560087CD3C /* Networking.framework in Embed Frameworks */,
+				A7D732CA28A882820087CD3C /* Alamofire.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0309965328A128FD00809CC7 /* DashboardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStatusView.swift; sourceTree = "<group>"; };
 		A7C3C7D628A11AE20086F3CC /* Weder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,9 +73,11 @@
 		A7D7323C28A7B3730087CD3C /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		A7D7323F28A7B43E0087CD3C /* DashboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderView.swift; sourceTree = "<group>"; };
 		A7D7324228A7BCFD0087CD3C /* WindHumidityRainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindHumidityRainView.swift; sourceTree = "<group>"; };
-		A7D7324428A7BDA80087CD3C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		A7D7324828A7CF450087CD3C /* NextSevenDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextSevenDaysView.swift; sourceTree = "<group>"; };
 		A7D7324D28A7D3FE0087CD3C /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
+		A7D732C828A882820087CD3C /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
+		A7D7335128A892560087CD3C /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7D7335728A89D7B0087CD3C /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D732C928A882820087CD3C /* Alamofire.xcframework in Frameworks */,
 				0309965728A12D2300809CC7 /* SnapKit in Frameworks */,
+				A7D7335228A892560087CD3C /* Networking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +115,7 @@
 				A7C3C7E928A11AE40086F3CC /* WederTests */,
 				A7C3C7F328A11AE40086F3CC /* WederUITests */,
 				A7C3C7D728A11AE20086F3CC /* Products */,
+				A7D732C728A882820087CD3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				A7C3C7D928A11AE20086F3CC /* WederApp.swift */,
-				A7D7324628A7BDBD0087CD3C /* Models */,
 				A7D7324C28A7D2300087CD3C /* Components */,
 				A7D7324A28A7CFDE0087CD3C /* Preview Content */,
 				A7D7324B28A7D2150087CD3C /* Scenes */,
@@ -142,6 +165,7 @@
 				A7D7323E28A7B4140087CD3C /* Dashboard Header Menu */,
 				A7D7323A28A7B31B0087CD3C /* Status View */,
 				A7C3C80328A11AF50086F3CC /* DashboardView.swift */,
+				A7D7335728A89D7B0087CD3C /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -168,14 +192,6 @@
 				A7D7323F28A7B43E0087CD3C /* DashboardHeaderView.swift */,
 			);
 			path = "Dashboard Header Menu";
-			sourceTree = "<group>";
-		};
-		A7D7324628A7BDBD0087CD3C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A7D7324428A7BDA80087CD3C /* Weather.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		A7D7324728A7CF2E0087CD3C /* Next Seven Days */ = {
@@ -211,6 +227,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		A7D732C728A882820087CD3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7D7335128A892560087CD3C /* Networking.framework */,
+				A7D732C828A882820087CD3C /* Alamofire.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,6 +246,7 @@
 				A7C3C7D228A11AE20086F3CC /* Sources */,
 				A7C3C7D328A11AE20086F3CC /* Frameworks */,
 				A7C3C7D428A11AE20086F3CC /* Resources */,
+				A7D732CB28A882820087CD3C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -353,8 +379,8 @@
 				0309965428A128FD00809CC7 /* DashboardStatusView.swift in Sources */,
 				A7C3C80428A11AF50086F3CC /* DashboardView.swift in Sources */,
 				A7C3C7DA28A11AE20086F3CC /* WederApp.swift in Sources */,
+				A7D7335828A89D7B0087CD3C /* DashboardViewModel.swift in Sources */,
 				A7D7324928A7CF450087CD3C /* NextSevenDaysView.swift in Sources */,
-				A7D7324528A7BDA80087CD3C /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
