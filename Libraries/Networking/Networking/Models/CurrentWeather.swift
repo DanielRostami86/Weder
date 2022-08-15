@@ -8,6 +8,19 @@
 import Foundation
 import Combine
 
+public struct ForecastWeather: Decodable {
+    
+    public let list: [Forecast]?
+    public let city: City?
+
+    public struct Forecast: Decodable {
+        public let main: WeatherMain?
+        public let weather: [Weather]?
+        public let wind: Wind?
+        public let clouds: Clouds?
+    }
+}
+
 public struct CurrentWeather: Decodable {
     
     public let cord: Coordinate?
@@ -26,6 +39,10 @@ public struct Clouds: Decodable {
     public let all: Double?
 }
 
+public struct City: Decodable {
+    public let name: String?
+}
+
 public struct Wind: Decodable {
     public let speed: Double?
     public let deg: Int?
@@ -42,6 +59,7 @@ public struct WeatherMain: Decodable {
     public let temp_max: Double?
     public let pressure: Int?
     public let humidity: Int?
+    
     
     public static func sample() -> WeatherMain {
         return WeatherMain(temp: 14, feels_like: 16, temp_min: 10, temp_max: 18, pressure: 14, humidity: 60)

@@ -12,11 +12,11 @@ public class Networking: APIHelper {
 
     public static let shared = Networking()
     
-    public func fetchWeather(lat: Double, long: Double) -> AnyPublisher<CurrentWeather, Error> {
+    public func fetchWeather(lat: Double, long: Double) -> AnyPublisher<ForecastWeather, Error> {
         return requestCall(requestURL: APIAdress.currentWeather(lat: lat, long: long))
     }
     
-    public func fetchSevenDaysWeather() -> AnyPublisher<CurrentWeather, Error> {
+    public func fetchSevenDaysWeather() -> AnyPublisher<ForecastWeather, Error> {
         return requestCall(requestURL: APIAdress.sevenDaysWeather)
     }
 }

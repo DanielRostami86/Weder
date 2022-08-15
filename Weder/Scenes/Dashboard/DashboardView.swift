@@ -20,9 +20,9 @@ struct DashboardView: View {
                     .edgesIgnoringSafeArea(.all)
                     .colorInvert()
                 VStack(alignment: .center, spacing: 10) {
-                    DashboardHeaderView(city: "Tehran")
-                    DashboardLoadingStatus(loadingStatus: .done)
-                    if let icon = viewModel.weather?.weather?[0].icon {
+                    DashboardHeaderView(city: viewModel.weather?.city?.name?.capitalized ?? "")
+                    DashboardLoadingStatus(loadingStatus: viewModel.loading)
+                    if let icon = viewModel.weather?.list?[0].weather?[0].icon {
                         Image(WeatherCondtion.getCondition(icon).imageName)
                             .resizable()
                             .frame(width: weatherImageWidth(size: geometry.size),
@@ -31,7 +31,7 @@ struct DashboardView: View {
                     }
                     VStack(spacing: 0) {
                         HStack(alignment: .top) {
-                            if let temp = viewModel.weather?.main?.temp {
+                            if let temp = viewModel.weather?.list?[0].main?.temp {
                                 Text(String(temp))
                                     .font(.system(size: 90))
                                     .bold()
@@ -39,11 +39,10 @@ struct DashboardView: View {
                                     .font(.largeTitle)
                                     .offset(x: -8, y: 8)
                             }
-                   
                         }
                         .offset(x: 8)
-                        if let desc = viewModel.weather?.weather?[0].description {
-                            Text(desc)
+                        if let desc = viewModel.weather?.list?[0].weather?[0].description {
+                            Text(desc.capitalized)
                                 .foregroundColor(.gray)
                                 .font(.title2)
                         }
@@ -64,13 +63,14 @@ struct DashboardView: View {
                         HourlyWeatherView(temp: -3, condition: "rainy", hour: 15)
                         HourlyWeatherView(temp: 31, condition: "thunder", hour: 18)
                     }
-                    
                     Spacer()
                 }
                 .foregroundColor(.primary)
+                .animation(.interactiveSpring(response: 0.9, dampingFraction: 0.9, blendDuration: 0.9))
                 .padding()
             }
         }
+        .alert("Enexpected Error", isPresented: $viewModel.hasError) { }
     }
     
     private func weatherImageWidth(size: CGSize) -> CGFloat {

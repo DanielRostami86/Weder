@@ -9,6 +9,6 @@ import Foundation
 import Combine
 
 public protocol APIHelper {
-    func fetchWeather(lat: Double, long: Double) -> AnyPublisher<CurrentWeather, Error>
-    func fetchSevenDaysWeather() -> AnyPublisher<CurrentWeather, Error>
+    func fetchWeather(lat: Double, long: Double) -> AnyPublisher<ForecastWeather, Error>
+    func fetchSevenDaysWeather() -> AnyPublisher<ForecastWeather, Error>
 }
