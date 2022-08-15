@@ -10,8 +10,7 @@ import UIKit
 
 struct DashboardView: View {
     
-    @ObservedObject var viewModel = DashboardViewModel()
-    @State private var isSevenDayActive = false
+    @ObservedObject var viewModel: WeatherForecastViewModel
     
     var body: some View {
         GeometryReader { geometry in
@@ -20,10 +19,10 @@ struct DashboardView: View {
                     .edgesIgnoringSafeArea(.all)
                     .colorInvert()
                 VStack(alignment: .center, spacing: 10) {
-                    DashboardHeaderView(city: viewModel.weather?.city?.name?.capitalized ?? "")
+                    NavigationBarView(title: viewModel.currentWeather?.city ?? "", page: .dashboard)
                     DashboardLoadingStatus(loadingStatus: viewModel.loading)
-                    if let icon = viewModel.weather?.list?[0].weather?[0].icon {
-                        Image(WeatherCondtion.getCondition(icon).imageName)
+                    if let icon = viewModel.currentWeather?.icon {
+                        Image(WeatherCondtion.getConditionFromIcon(icon).imageName)
                             .resizable()
                             .frame(width: weatherImageWidth(size: geometry.size),
                                    height: weatherImageWidth(size: geometry.size))
@@ -31,8 +30,8 @@ struct DashboardView: View {
                     }
                     VStack(spacing: 0) {
                         HStack(alignment: .top) {
-                            if let temp = viewModel.weather?.list?[0].main?.temp {
-                                Text(String(temp))
+                            if let temp = viewModel.currentWeather?.temp {
+                                Text(String(Int(temp)))
                                     .font(.system(size: 90))
                                     .bold()
                                 Text("°")
@@ -41,19 +40,21 @@ struct DashboardView: View {
                             }
                         }
                         .offset(x: 8)
-                        if let desc = viewModel.weather?.list?[0].weather?[0].description {
+                        if let desc = viewModel.currentWeather?.description {
                             Text(desc.capitalized)
                                 .foregroundColor(.gray)
                                 .font(.title2)
                         }
                     }
                     Spacer()
-                    WindHumidityRainView(weather: .sample())
-                    NavigationLink(isActive: $isSevenDayActive) {
-                        NextSevenDaysView()
+                    WindHumidityRainView(weather: viewModel.currentWeather?.windHumidityRain ?? .sample())
+                    NavigationLink(isActive: $viewModel.isFourDayActive) {
+                        NextFourDaysView()
+                            .environmentObject(viewModel)
+                            .navigationBarHidden(true)
                     } label: {
                         NextSevenDayLinkView {
-                            self.isSevenDayActive.toggle()
+                            self.viewModel.isFourDayActive.toggle()
                         }
                     }
                     
@@ -85,13 +86,19 @@ struct NextSevenDayLinkView: View {
     var body: some View {
         HStack {
             Text("Today")
+                .font(.title2)
+                .bold()
             Spacer()
             HStack {
-                Text("7 days")
+                Text("4 days")
+                    .bold()
                 Image(systemName: "chevron.right")
                     .resizable()
                     .frame(width: 10, height: 10)
-            }   .onTapGesture {
+                    .foregroundColor(.secondary)
+            }
+            .foregroundColor(.secondary)
+            .onTapGesture {
                 tapped()
             }
         }
@@ -100,16 +107,19 @@ struct NextSevenDayLinkView: View {
 }
 
 struct DashboardView_Previews: PreviewProvider {
+    
+    static var viewModel: WeatherForecastViewModel {
+        let viewModel = WeatherForecastViewModel()
+        viewModel.currentWeather = .sample()
+        return viewModel
+    }
+    
     static var previews: some View {
         Group {
-            DashboardView()
-                .preferredColorScheme(.light)
-                .previewDevice(PreviewDevice(rawValue: "iPod touch"))
-                .previewDisplayName("iPhone SE")
-            DashboardView()
-                .preferredColorScheme(.dark)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
-                .previewDisplayName("iPhone 12 Pro Max")
+            DashboardView(viewModel: viewModel)
+                .preferredDevice(.iPhoneSE, colorScheme: .dark)
+            DashboardView(viewModel: viewModel)
+                .preferredDevice(.iPhone12Pro, colorScheme: .light)
         }
     }
 }

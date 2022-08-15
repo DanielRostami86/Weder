@@ -53,7 +53,6 @@ struct DashboardLoadingStatus: View {
             RoundedRectangle(cornerRadius: Constants.rectangleCornerRadious)
                 .stroke(Color.primary, lineWidth: Constants.rectangleLineWidth)
         )
-        .foregroundColor(.primary)
     }
     
     enum Constants {

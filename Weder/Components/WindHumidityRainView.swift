@@ -10,9 +10,9 @@ import Networking
 
 public enum WindHumidityRain {
     
-    case wind(Double?)
+    case wind(Int?)
     case humidity(Int?)
-    case rain(Double?)
+    case rain(Int?)
     
     var title: String {
         switch self {
@@ -59,13 +59,13 @@ public enum WindHumidityRain {
 
 struct WindHumidityRainView: View {
     
-    var weather: CurrentWeather
+    var weather: WindHumidityRainModel?
     
     var body: some View {
-        HStack(spacing: 25) {
-            WindHumidityRainChild(data: .wind(weather.wind?.speed))
+        HStack(spacing: 35) {
+            WindHumidityRainChild(data: .wind(Int(weather?.wind ?? 0)))
             HorizontalSeparator()
-            WindHumidityRainChild(data: .humidity(weather.main?.humidity))
+            WindHumidityRainChild(data: .humidity(weather?.humidity ?? 0))
             HorizontalSeparator()
             WindHumidityRainChild(data: .rain(14)) // Fixme no api for it
         }

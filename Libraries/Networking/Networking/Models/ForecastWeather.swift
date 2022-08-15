@@ -18,20 +18,23 @@ public struct ForecastWeather: Decodable {
         public let weather: [Weather]?
         public let wind: Wind?
         public let clouds: Clouds?
-    }
-}
-
-public struct CurrentWeather: Decodable {
-    
-    public let cord: Coordinate?
-    public let weather: [Weather]?
-    public let base : String?
-    public let main: WeatherMain?
-    public let visibility: Int?
-    public let wind: Wind?
-    
-    static public func sample() -> CurrentWeather {
-        return CurrentWeather(cord: nil, weather: [Weather.sample()], base: nil, main: WeatherMain.sample(), visibility: 14, wind: Wind.sample())
+        public let dt_txt: String?
+        
+        public var firstWeather: Weather? {
+            return weather?.first
+        }
+        
+        public var dateHourly: Date {
+            guard let stringDate = dt_txt else { return Date() }
+            guard let finalDate = stringDate.dateFromString(from: .YYYY_MM_DD_HH_MM_SS, to: .dd_MMM_yyyy_hh_mm) else { return Date() }
+            return finalDate
+        }
+        
+        public var dateOnly: Date {
+            guard let stringDate = dt_txt else { return Date() }
+            guard let finalDate = stringDate.dateFromString(from: .YYYY_MM_DD_HH_MM_SS, to: .YYYY_MM_DD) else { return Date() }
+            return finalDate
+        }
     }
 }
 
@@ -60,7 +63,6 @@ public struct WeatherMain: Decodable {
     public let pressure: Int?
     public let humidity: Int?
     
-    
     public static func sample() -> WeatherMain {
         return WeatherMain(temp: 14, feels_like: 16, temp_min: 10, temp_max: 18, pressure: 14, humidity: 60)
     }
@@ -81,12 +83,3 @@ public struct Coordinate: Decodable {
     public let lon: Double?
     public let lat: Double?
 }
-
-//public struct Temp: Decodable {
-//    let day: Double?
-//    let min: Double?
-//    let max: Double?
-//    let night: Double?
-//    let eve: Double?
-//    let morn: Double?
-//}

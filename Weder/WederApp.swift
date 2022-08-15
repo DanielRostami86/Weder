@@ -12,7 +12,7 @@ struct WederApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                DashboardView()
+                DashboardView(viewModel: .init())
                     .navigationBarHidden(true)
             }
         }

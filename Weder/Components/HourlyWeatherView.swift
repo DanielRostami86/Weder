@@ -50,12 +50,12 @@ public enum WeatherCondtion {
         }
     }
 
-    static func getCondition(_ condition: String) -> WeatherCondtion {
-        switch condition {
-        case "rainy":
+    static func getConditionFromIcon(_ icon: String) -> WeatherCondtion {
+        switch icon {
+        case "10d":
             return .rainy
-        case "cloudy":
-            return.cloudy
+        case "02n", "04d", "04n":
+            return .cloudy
         case "thunder":
             return .thunder
         case "01d":
@@ -78,7 +78,7 @@ struct HourlyWeatherView: View {
                 .font(.body)
                 .bold()
                 .foregroundColor(.primary)
-            Image(WeatherCondtion.getCondition(condition).imageName)
+            Image(WeatherCondtion.getConditionFromIcon(condition).imageName)
                 .resizable()
                 .frame(width: 40, height: 40)
             Text("\(hour):00")
