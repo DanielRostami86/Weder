@@ -74,14 +74,6 @@ struct DashboardView: View {
                 }
             }
         } else {
-            switch LocationPermissionStatus {
-            case .granted:
-                print("1")
-            case .notGranted:
-                print("2")
-            default:
-                break
-            }
             Text("Location Neded")
         }
     }
