@@ -44,10 +44,6 @@ class WeatherForecastViewModel: ObservableObject {
     private let networking = Networking.shared
     private var cancellable: AnyCancellable?
     
-    init() {
-        fetchWeather(lat: -33.922520, long: 151.204100)
-    }
-    
     func fetchWeather(lat: Double, long: Double) {
         cancellable = networking.fetchWeather(lat: lat, long: long)
             .sink(receiveCompletion: { errorResponse in
