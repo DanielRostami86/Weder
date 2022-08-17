@@ -15,6 +15,6 @@ DerivedData/
 !default.perspectivev3
 *.xccheckout
 xcuserdata/
-xcuserdata/**/*
+#xcuserdata/**/*
 *.moved-aside
 Carthage/Build/
