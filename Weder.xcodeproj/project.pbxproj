@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0309965428A128FD00809CC7 /* DashboardStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0309965328A128FD00809CC7 /* DashboardStatusView.swift */; };
 		0309965728A12D2300809CC7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0309965628A12D2300809CC7 /* SnapKit */; };
+		0389CE4E28AB987400B47488 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389CE4D28AB987400B47488 /* LocationManager.swift */; };
 		A724A2F228A9F1D000D09C6F /* Array+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724A2F128A9F1D000D09C6F /* Array+ext.swift */; };
 		A7C3C7DA28A11AE20086F3CC /* WederApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3C7D928A11AE20086F3CC /* WederApp.swift */; };
 		A7C3C7DE28A11AE40086F3CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C3C7DD28A11AE40086F3CC /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		0309965328A128FD00809CC7 /* DashboardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStatusView.swift; sourceTree = "<group>"; };
+		0389CE4D28AB987400B47488 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A724A2F128A9F1D000D09C6F /* Array+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ext.swift"; sourceTree = "<group>"; };
 		A7C3C7D628A11AE20086F3CC /* Weder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C3C7D928A11AE20086F3CC /* WederApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WederApp.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0389CE4C28AB985A00B47488 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				0389CE4D28AB987400B47488 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		A724A2F328AA687A00D09C6F /* View Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		A7C3C7D828A11AE20086F3CC /* Weder */ = {
 			isa = PBXGroup;
 			children = (
+				0389CE4C28AB985A00B47488 /* Location */,
 				A7C3C7D928A11AE20086F3CC /* WederApp.swift */,
 				A7D7324C28A7D2300087CD3C /* Components */,
 				A724A2F328AA687A00D09C6F /* View Model */,
@@ -374,6 +385,7 @@
 				A7D7324028A7B43E0087CD3C /* NavigationBarView.swift in Sources */,
 				A7D7324328A7BCFD0087CD3C /* WindHumidityRainView.swift in Sources */,
 				A7D7324E28A7D3FE0087CD3C /* HourlyWeatherView.swift in Sources */,
+				0389CE4E28AB987400B47488 /* LocationManager.swift in Sources */,
 				A7D7323D28A7B3730087CD3C /* View+Ext.swift in Sources */,
 				0309965428A128FD00809CC7 /* DashboardStatusView.swift in Sources */,
 				A7C3C80428A11AF50086F3CC /* DashboardView.swift in Sources */,
@@ -541,6 +553,7 @@
 				DEVELOPMENT_TEAM = 9WTKYWNVD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For get weather data we need access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -569,6 +582,7 @@
 				DEVELOPMENT_TEAM = 9WTKYWNVD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For get weather data we need access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
