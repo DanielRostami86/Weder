@@ -123,7 +123,6 @@ struct WindHumidityRainView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
         WindHumidityRainView(weather: .sample())
             .preferredColorScheme(.light)
-        
     }
 }
 
