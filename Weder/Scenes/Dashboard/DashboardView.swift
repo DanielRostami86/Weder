@@ -75,6 +75,9 @@ struct DashboardView: View {
             }
         } else {
             Text("Location Neded")
+                .onTapGesture {
+                    locationManager.requestForLocation()
+                }
         }
     }
     
