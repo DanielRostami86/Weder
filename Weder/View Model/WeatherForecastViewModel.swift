@@ -134,7 +134,7 @@ public struct CurrentWeather: Identifiable {
     }
     
     public static func sample() -> CurrentWeather {
-        return CurrentWeather(city: "", temp: 10, icon: "01d", windHumidityRain: .sample(), description: "Cloudy", tempMin: 10, tempMax: 20)
+        return CurrentWeather(city: "Tehran", temp: 10, icon: "01d", windHumidityRain: .sample(), description: "Cloudy", tempMin: 10, tempMax: 20)
     }
 }
 
