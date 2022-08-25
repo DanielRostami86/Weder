@@ -120,7 +120,7 @@ struct WindHumidityRainChild: View {
 struct WindHumidityRainView_Previews: PreviewProvider {
     static var previews: some View {
         WindHumidityRainView(weather: .sample())
-            .preferredColorScheme(.dark)
+            .preferredDevice(.iPhone8, colorScheme: .dark)
         WindHumidityRainView(weather: .sample())
             .preferredColorScheme(.light)
     }

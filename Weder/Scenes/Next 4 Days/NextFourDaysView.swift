@@ -25,8 +25,7 @@ struct NextFourDaysView: View {
                     ScrollView {
                         VStack {
                             NextFourDayHeaderView(tomorrowWeather: viewModel.tomorrowWeather)
-                                .frame(height: geometry.size.height * 0.45)
-                                .padding()
+                                .frame(height: geometry.size.height * 0.5)
                         }
                         .overlay(
                             RoundedRectangle(cornerRadius: 30)
@@ -154,13 +153,7 @@ struct NextFourDaysView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NextFourDaysView()
-                .preferredDevice(.iPhone12, colorScheme: .dark)
-            NextFourDaysView()
-                .preferredDevice(.iPhone12ProMax, colorScheme: .dark)
-            NextFourDaysView()
-                .preferredDevice(.iPhone12Pro, colorScheme: .dark)
-            NextFourDaysView()
-                .preferredDevice(.iPhone8, colorScheme: .dark)
+                .preferredDevice(.iPhoneSE, colorScheme: .dark)
         }
         .environmentObject(viewModel)
     }

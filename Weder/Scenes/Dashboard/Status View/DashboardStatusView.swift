@@ -47,7 +47,7 @@ struct DashboardLoadingStatus: View {
             Text(loadingStatus.updatingTitle)
         }
         .font(.system(size: 18)) // FixMe Font Class needed
-        .padding(.vertical, 10)
+        .padding(.vertical, 5)
         .padding(.horizontal, 16)
         .overlay(
             RoundedRectangle(cornerRadius: Constants.rectangleCornerRadious)
