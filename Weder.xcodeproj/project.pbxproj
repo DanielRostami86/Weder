@@ -17,6 +17,7 @@
 		A7C3C7F528A11AE40086F3CC /* WederUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3C7F428A11AE40086F3CC /* WederUITests.swift */; };
 		A7C3C7F728A11AE40086F3CC /* WederUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3C7F628A11AE40086F3CC /* WederUITestsLaunchTests.swift */; };
 		A7C3C80428A11AF50086F3CC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3C80328A11AF50086F3CC /* DashboardView.swift */; };
+		A7D45DF028B728D7005FBAF4 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D45DEF28B728D7005FBAF4 /* ExternalAccessory.framework */; };
 		A7D7323D28A7B3730087CD3C /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7323C28A7B3730087CD3C /* View+Ext.swift */; };
 		A7D7324028A7B43E0087CD3C /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7323F28A7B43E0087CD3C /* NavigationBarView.swift */; };
 		A7D7324328A7BCFD0087CD3C /* WindHumidityRainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7324228A7BCFD0087CD3C /* WindHumidityRainView.swift */; };
@@ -71,6 +72,8 @@
 		A7C3C7F428A11AE40086F3CC /* WederUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WederUITests.swift; sourceTree = "<group>"; };
 		A7C3C7F628A11AE40086F3CC /* WederUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WederUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A7C3C80328A11AF50086F3CC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		A7D45DEE28B728D7005FBAF4 /* Weder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weder.entitlements; sourceTree = "<group>"; };
+		A7D45DEF28B728D7005FBAF4 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		A7D7323C28A7B3730087CD3C /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		A7D7323F28A7B43E0087CD3C /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		A7D7324228A7BCFD0087CD3C /* WindHumidityRainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindHumidityRainView.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D45DF028B728D7005FBAF4 /* ExternalAccessory.framework in Frameworks */,
 				0309965728A12D2300809CC7 /* SnapKit in Frameworks */,
 				A7D7335228A892560087CD3C /* Networking.framework in Frameworks */,
 			);
@@ -148,6 +152,7 @@
 		A7C3C7D828A11AE20086F3CC /* Weder */ = {
 			isa = PBXGroup;
 			children = (
+				A7D45DEE28B728D7005FBAF4 /* Weder.entitlements */,
 				0389CE4C28AB985A00B47488 /* Location */,
 				A7C3C7D928A11AE20086F3CC /* WederApp.swift */,
 				A7D7324C28A7D2300087CD3C /* Components */,
@@ -240,6 +245,7 @@
 		A7D732C728A882820087CD3C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7D45DEF28B728D7005FBAF4 /* ExternalAccessory.framework */,
 				A7D7335128A892560087CD3C /* Networking.framework */,
 				A7D732C828A882820087CD3C /* Alamofire.xcframework */,
 			);
@@ -548,6 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Weder/Weder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2S7R356SUL;
@@ -578,6 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Weder/Weder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2S7R356SUL;
@@ -744,9 +752,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Weder/Weder.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9WTKYWNVD4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For get weather data we need access your location";
@@ -762,6 +772,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = danie.dec.Weder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG PROD";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -866,6 +877,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Weder/Weder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9WTKYWNVD4;
@@ -994,6 +1006,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Weder/Weder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9WTKYWNVD4;
@@ -1116,6 +1129,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Weder/Weder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9WTKYWNVD4;
