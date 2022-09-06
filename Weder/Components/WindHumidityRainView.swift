@@ -125,5 +125,3 @@ struct WindHumidityRainView_Previews: PreviewProvider {
             .preferredColorScheme(.light)
     }
 }
-
-

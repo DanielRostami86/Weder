@@ -259,6 +259,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7C3C7FA28A11AE40086F3CC /* Build configuration list for PBXNativeTarget "Weder" */;
 			buildPhases = (
+				A712C59B28C6D69A00C9D133 /* Run SwiftLint */,
 				A7C3C7D228A11AE20086F3CC /* Sources */,
 				A7C3C7D328A11AE20086F3CC /* Frameworks */,
 				A7C3C7D428A11AE20086F3CC /* Resources */,
@@ -382,6 +383,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A712C59B28C6D69A00C9D133 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A7C3C7D228A11AE20086F3CC /* Sources */ = {

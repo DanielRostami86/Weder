@@ -1,0 +1,20 @@
+# disabled rules
+disabled_rules:
+    - identifier_name
+    - trailing_whitespace
+    - trailing_newline
+    - line_length
+    
+# rules we want to apply
+opt_in_rules:
+    - empty_count
+    
+# disabling lint for certain dependency manager
+excluded:
+    - Carthage
+    - Pods
+    
+# modifying some rules
+#line_lenght:
+ #   warning: 150
+  #  error: 200

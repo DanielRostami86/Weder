@@ -35,7 +35,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             locationStatus = .granted
         default:
             locationStatus = .notGranted
-            break
         }
     }
     

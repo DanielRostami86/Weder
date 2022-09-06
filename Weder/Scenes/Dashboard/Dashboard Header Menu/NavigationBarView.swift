@@ -86,7 +86,6 @@ struct NavigationTitleView: View {
     }
 }
 
-
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBarView(title: "Tehran", page: .dashboard)

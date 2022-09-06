@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum dateStringFormatTo: String {
+enum DateStringFormatTo: String {
     case YYYY_MM_DD = "YYYY MM dd"
     case dd_MMM_yyyy = "dd MMM YYYY"
     case dd_MMM_yyyy_hh_mm = "MM dd yyyy HH:mm:ss"
@@ -15,7 +15,7 @@ enum dateStringFormatTo: String {
     case hh_mm = "HH:mm:ss"
 }
 
-enum dateStringFormatFrom: String {
+enum DateStringFormatFrom: String {
     case YYYY_MM_DD = "YYYY-MM-dd"
     case dd_MMM_yyyy = "dd-MMM-YYYY"
     case YYYY_MM_DD_T_HH_MM_SS_SSS_Z = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"

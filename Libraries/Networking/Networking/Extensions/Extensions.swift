@@ -9,14 +9,14 @@ import Foundation
 import UIKit
 
 extension String {
-    func dateFromString(from fromFormat: dateStringFormatFrom, to toFormat: dateStringFormatTo) -> Date? {
+    func dateFromString(from fromFormat: DateStringFormatFrom, to toFormat: DateStringFormatTo) -> Date? {
         guard let time = UIApplication.shared.UTCToLocal(date: self,
                                                          from: fromFormat,
                                                          to: toFormat) else { return Date() }
         return time.dateFromUTC(to: toFormat)
     }
     
-    func dateFromUTC(to toFormat: dateStringFormatTo) -> Date? {
+    func dateFromUTC(to toFormat: DateStringFormatTo) -> Date? {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = toFormat.rawValue
@@ -31,8 +31,8 @@ extension String {
 
 extension UIApplication {
     func UTCToLocal(date: String,
-                    from fromFormat: dateStringFormatFrom,
-                    to toFormat: dateStringFormatTo) -> String? {
+                    from fromFormat: DateStringFormatFrom,
+                    to toFormat: DateStringFormatTo) -> String? {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = fromFormat.rawValue
