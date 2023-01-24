@@ -15,9 +15,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Fetch Swift Packages
-        run: xcodebuild -resolvePackageDependencies -usePackageSupportBuiltinSCM
+    - uses: actions/checkout@v2
     - name: Build
       run: swift build -v
     - name: Run tests
