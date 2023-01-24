@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0309965428A128FD00809CC7 /* DashboardStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0309965328A128FD00809CC7 /* DashboardStatusView.swift */; };
-		0309965728A12D2300809CC7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0309965628A12D2300809CC7 /* SnapKit */; };
 		0389CE4E28AB987400B47488 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389CE4D28AB987400B47488 /* LocationManager.swift */; };
 		A724A2F228A9F1D000D09C6F /* Array+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724A2F128A9F1D000D09C6F /* Array+ext.swift */; };
 		A7C3C7DA28A11AE20086F3CC /* WederApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3C7D928A11AE20086F3CC /* WederApp.swift */; };
@@ -96,7 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D45DF028B728D7005FBAF4 /* ExternalAccessory.framework in Frameworks */,
-				0309965728A12D2300809CC7 /* SnapKit in Frameworks */,
 				A7D7335228A892560087CD3C /* Networking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +287,6 @@
 			);
 			name = Weder;
 			packageProductDependencies = (
-				0309965628A12D2300809CC7 /* SnapKit */,
 			);
 			productName = Weder;
 			productReference = A7C3C7D628A11AE20086F3CC /* Weder.app */;
@@ -364,7 +361,6 @@
 			);
 			mainGroup = A7C3C7CD28A11AE20086F3CC;
 			packageReferences = (
-				0309965528A12D2300809CC7 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = A7C3C7D728A11AE20086F3CC /* Products */;
 			projectDirPath = "";
@@ -1310,25 +1306,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		0309965528A12D2300809CC7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = exactVersion;
-				version = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0309965628A12D2300809CC7 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0309965528A12D2300809CC7 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A7C3C7CE28A11AE20086F3CC /* Project object */;
 }

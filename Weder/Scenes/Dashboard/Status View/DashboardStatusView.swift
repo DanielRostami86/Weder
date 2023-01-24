@@ -5,7 +5,6 @@
 //  Created by Behnam on 8/8/22.
 //
 
-import SnapKit
 import SwiftUI
 
 public enum LoadingStatus {
