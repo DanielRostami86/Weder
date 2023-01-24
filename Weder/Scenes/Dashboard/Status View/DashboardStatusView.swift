@@ -5,13 +5,12 @@
 //  Created by Behnam on 8/8/22.
 //
 
-import SwiftUI
 import SnapKit
+import SwiftUI
 
 public enum LoadingStatus {
-    
     case loading, done, failed
-    
+
     var updatingTitle: String {
         switch self {
         case .loading:
@@ -22,7 +21,7 @@ public enum LoadingStatus {
             return "Offline"
         }
     }
-    
+
     var statusColor: Color {
         switch self {
         case .loading:
@@ -36,9 +35,8 @@ public enum LoadingStatus {
 }
 
 struct DashboardLoadingStatus: View {
-    
     var loadingStatus: LoadingStatus
-    
+
     var body: some View {
         HStack {
             Circle()
@@ -54,7 +52,7 @@ struct DashboardLoadingStatus: View {
                 .stroke(Color.primary, lineWidth: Constants.rectangleLineWidth)
         )
     }
-    
+
     enum Constants {
         static let statusSize: CGFloat = 10
         static let rectangleCornerRadious: CGFloat = 25
@@ -70,7 +68,7 @@ struct DashboardLoadingStatus_Previews: PreviewProvider {
             DashboardLoadingStatus(loadingStatus: .failed)
         }
         .preferredColorScheme(.dark)
-        
+
         VStack {
             DashboardLoadingStatus(loadingStatus: .done)
             DashboardLoadingStatus(loadingStatus: .loading)

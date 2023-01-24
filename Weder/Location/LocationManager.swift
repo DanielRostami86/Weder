@@ -5,15 +5,14 @@
 //  Created by Behnam on 8/16/22.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 enum LocationPermissionStatus {
     case granted, notGranted
 }
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-
     private let locationManager = CLLocationManager()
     @Published var locationStatus: LocationPermissionStatus?
     @Published var lastLocation: CLLocation?
@@ -22,13 +21,14 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        requestForLocation()
     }
-    
+
     func requestForLocation() {
         locationManager.requestWhenInUseAuthorization()
     }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+
+    func locationManager(_: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse, .authorized:
             locationManager.startUpdatingLocation()
@@ -37,8 +37,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             locationStatus = .notGranted
         }
     }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+    func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         lastLocation = location
         locationManager.stopUpdatingLocation()

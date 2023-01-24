@@ -20,5 +20,4 @@ enum DateStringFormatFrom: String {
     case dd_MMM_yyyy = "dd-MMM-YYYY"
     case YYYY_MM_DD_T_HH_MM_SS_SSS_Z = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     case YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss"
-
 }

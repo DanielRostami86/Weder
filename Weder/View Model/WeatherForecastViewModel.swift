@@ -5,14 +5,13 @@
 //  Created by Daniel Rostami on 14/8/2022.
 //
 
+import Combine
 import Foundation
 import Networking
-import Combine
 
 typealias Forecast = ForecastWeather.Forecast
 
 public struct NextDayWeather: Hashable, Identifiable {
-
     public static func == (lhs: NextDayWeather, rhs: NextDayWeather) -> Bool {
         return lhs.forcast.id == rhs.forcast.id
     }
@@ -20,7 +19,7 @@ public struct NextDayWeather: Hashable, Identifiable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(forcast.id)
     }
-    
+
     public let forcast: CurrentWeather
     public let weekday: String
     public var id: String {
@@ -29,7 +28,6 @@ public struct NextDayWeather: Hashable, Identifiable {
 }
 
 class WeatherForecastViewModel: ObservableObject {
-
     @Published var isFourDayActive = false
     @Published var loading: LoadingStatus = .loading
     @Published var currentWeather: CurrentWeather?
@@ -43,11 +41,12 @@ class WeatherForecastViewModel: ObservableObject {
     private let networking = Networking.shared
     private var cancellable: AnyCancellable?
 
-    func fetchWeather(lat: Double, long: Double) {
+    func fetchWeather(lat: Double?, long: Double?) {
+        guard let lat = lat, let long = long else { return }
         cancellable = networking.fetchWeather(lat: lat, long: long)
             .sink(receiveCompletion: { errorResponse in
                 switch errorResponse {
-                case .failure(let error):
+                case let .failure(error):
                     self.loading = .failed
                     self.error = error
                     self.hasError = true
@@ -55,6 +54,7 @@ class WeatherForecastViewModel: ObservableObject {
                     break
                 }
             }, receiveValue: { weatherResponse in
+
                 self.loading = .done
                 self.weather = weatherResponse
                 self.makeWeatherGroupByDate()
@@ -83,13 +83,13 @@ class WeatherForecastViewModel: ObservableObject {
 
     private func makeWeatherModel(for forecast: [Forecast]) -> CurrentWeather {
         let city = weather?.city?.name ?? ""
-        let tempAverage = forecast.compactMap({ $0.main }).compactMap({ $0.temp }).average
-        let tempMinAverage = forecast.compactMap({ $0.main }).compactMap({ $0.temp_min }).average
-        let tempMaxAverage = forecast.compactMap({ $0.main }).compactMap({ $0.temp_max }).average
-        let averageIcon = forecast.compactMap({ $0.firstWeather }).compactMap({ $0.icon }).mode ?? ""
-        let windAverage = forecast.compactMap({ $0.wind }).compactMap({ $0.speed }).average
-        let humidtyAverage = forecast.compactMap({ $0.main }).compactMap({ $0.humidity }).average
-        let descAverage = forecast.compactMap({ $0.firstWeather }).compactMap({ $0.description }).mode ?? ""
+        let tempAverage = forecast.compactMap { $0.main }.compactMap { $0.temp }.average
+        let tempMinAverage = forecast.compactMap { $0.main }.compactMap { $0.temp_min }.average
+        let tempMaxAverage = forecast.compactMap { $0.main }.compactMap { $0.temp_max }.average
+        let averageIcon = forecast.compactMap { $0.firstWeather }.compactMap { $0.icon }.mode ?? ""
+        let windAverage = forecast.compactMap { $0.wind }.compactMap { $0.speed }.average
+        let humidtyAverage = forecast.compactMap { $0.main }.compactMap { $0.humidity }.average
+        let descAverage = forecast.compactMap { $0.firstWeather }.compactMap { $0.description }.mode ?? ""
         let rainAverage = 20.0 // we dont have this data
         return CurrentWeather(city: city, temp: tempAverage, icon: averageIcon,
                               windHumidityRain: .init(wind: windAverage, humidity: humidtyAverage, rain: rainAverage),
@@ -99,10 +99,10 @@ class WeatherForecastViewModel: ObservableObject {
     private func makeWeatherGroupByDate() {
         guard let weather = weather, let forecasts = weather.list else { return }
         let dateGroup = Dictionary(grouping: forecasts, by: { $0.dateOnly })
-        groupedWeather = dateGroup.map({ date, forecasts in
-            return (forecasts, date)
-        })
-        groupedWeather.sort(by: {$0.date < $1.date})
+        groupedWeather = dateGroup.map { date, forecasts in
+            (forecasts, date)
+        }
+        groupedWeather.sort(by: { $0.date < $1.date })
         groupedWeather.removeAll(where: { $0.date < Date() }) // removing the forecast which date is past
     }
 
@@ -115,7 +115,6 @@ class WeatherForecastViewModel: ObservableObject {
 }
 
 public struct CurrentWeather: Identifiable {
-
     public let city: String
     public let temp: Double
     public let icon: String
@@ -140,6 +139,6 @@ public struct WindHumidityRainModel {
     public let rain: Double
 
     public static func sample() -> WindHumidityRainModel {
-        return WindHumidityRainModel(wind: 0, humidity: 0, rain: 0)
+        return WindHumidityRainModel(wind: 9, humidity: 10, rain: 11)
     }
 }

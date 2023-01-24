@@ -5,15 +5,14 @@
 //  Created by Daniel Rostami on 13/8/2022.
 //
 
-import SwiftUI
 import Networking
+import SwiftUI
 
 public enum WindHumidityRain {
-    
     case wind(Int?)
     case humidity(Int?)
     case rain(Int?)
-    
+
     var title: String {
         switch self {
         case .wind:
@@ -24,7 +23,7 @@ public enum WindHumidityRain {
             return "Rain"
         }
     }
-    
+
     var imageName: String {
         switch self {
         case .wind:
@@ -35,18 +34,18 @@ public enum WindHumidityRain {
             return "cloud.rain"
         }
     }
-    
+
     var displayValue: String {
         switch self {
-        case .wind(let wind):
+        case let .wind(wind):
             return "\(wind ?? 0) km/h"
-        case .humidity(let humidity):
+        case let .humidity(humidity):
             return "\(humidity ?? 0)%"
-        case .rain(let rain):
+        case let .rain(rain):
             return "\(rain ?? 0)%"
         }
     }
-    
+
     var foreGroundColor: Color {
         switch self {
         case .wind, .rain:
@@ -58,9 +57,8 @@ public enum WindHumidityRain {
 }
 
 struct WindHumidityRainView: View {
-    
     var weather: WindHumidityRainModel?
-    
+
     var body: some View {
         HStack(spacing: 35) {
             WindHumidityRainChild(data: .wind(Int(weather?.wind ?? 0)))
@@ -77,7 +75,7 @@ struct WindHumidityRainView: View {
                 .opacity(0.15)
         )
     }
-    
+
     enum Constants {
         static let statusSize: CGFloat = 10
         static let rectangleCornerRadious: CGFloat = 25
@@ -86,9 +84,8 @@ struct WindHumidityRainView: View {
 }
 
 struct HorizontalSeparator: View {
-    
     var height: CGFloat = 40
-    
+
     var body: some View {
         Rectangle()
             .frame(width: 1, height: height)
@@ -97,9 +94,8 @@ struct HorizontalSeparator: View {
 }
 
 struct WindHumidityRainChild: View {
-    
     var data: WindHumidityRain
-    
+
     var body: some View {
         VStack {
             Image(systemName: data.imageName)

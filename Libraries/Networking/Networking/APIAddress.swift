@@ -10,23 +10,22 @@ import Foundation
 enum BaseURL {
     static var url: String {
         #if LOCAL
-        return "https://api.openweathermap.org/data/2.5/"
+            return "https://api.openweathermap.org/data/2.5/"
         #elseif PROD
-        return "https://api.openweathermap.org/data/2.5/"
+            return "https://api.openweathermap.org/data/2.5/"
         #elseif TEST
-        return "https://api.openweathermap.org/data/2.5/"
+            return "https://api.openweathermap.org/data/2.5/"
         #endif
     }
 }
 
 enum APIAdress {
-    
     case currentWeather(lat: Double, long: Double)
     case sevenDaysWeather
-    
+
     var url: String {
         switch self {
-        case .currentWeather(let lat, let long):
+        case let .currentWeather(lat, long):
             return "\(BaseURL.url)forecast?lat=\(lat)&lon=\(long)&units=metric&appid=\(APIKey.openWeather.key)"
         case .sevenDaysWeather:
             return ""

@@ -15,12 +15,11 @@ extension String {
                                                          to: toFormat) else { return Date() }
         return time.dateFromUTC(to: toFormat)
     }
-    
+
     func dateFromUTC(to toFormat: DateStringFormatTo) -> Date? {
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = toFormat.rawValue
-        
+
         if let today = dateFormatter.date(from: self) {
             return today
         } else {
@@ -32,17 +31,17 @@ extension String {
 extension UIApplication {
     func UTCToLocal(date: String,
                     from fromFormat: DateStringFormatFrom,
-                    to toFormat: DateStringFormatTo) -> String? {
-        
+                    to toFormat: DateStringFormatTo) -> String?
+    {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = fromFormat.rawValue
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        
+
         let dt = dateFormatter.date(from: date)
         dateFormatter.timeZone = TimeZone.current
-        
+
         dateFormatter.dateFormat = toFormat.rawValue
-        
+
         if let dtFinal = dt {
             return dateFormatter.string(from: dtFinal)
         } else {
@@ -50,4 +49,3 @@ extension UIApplication {
         }
     }
 }
-

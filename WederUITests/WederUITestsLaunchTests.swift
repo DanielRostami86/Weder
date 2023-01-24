@@ -8,7 +8,6 @@
 import XCTest
 
 class WederUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

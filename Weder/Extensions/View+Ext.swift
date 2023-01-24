@@ -10,17 +10,15 @@ import SwiftUI
 
 extension Shape {
     func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
-        self
-            .stroke(strokeStyle, lineWidth: lineWidth)
-            .background(self.fill(fillStyle))
+        stroke(strokeStyle, lineWidth: lineWidth)
+            .background(fill(fillStyle))
     }
 }
 
 extension InsettableShape {
     func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
-        self
-            .strokeBorder(strokeStyle, lineWidth: lineWidth)
-            .background(self.fill(fillStyle))
+        strokeBorder(strokeStyle, lineWidth: lineWidth)
+            .background(fill(fillStyle))
     }
 }
 
@@ -29,7 +27,7 @@ struct DevicePreferences: ViewModifier {
     var colorScheme: ColorScheme
 
     func body(content: Content) -> some View {
-       content
+        content
             .preferredColorScheme(colorScheme)
             .previewDevice(PreviewDevice(rawValue: device.displayName))
             .previewDisplayName(device.displayName)

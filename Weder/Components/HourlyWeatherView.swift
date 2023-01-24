@@ -8,14 +8,13 @@
 import SwiftUI
 
 public enum WeatherCondtion {
-    
     case sunny
     case rainy
     case cloudy
     case slow
     case thunder
     case storm
-    
+
     var title: String {
         switch self {
         case .sunny:
@@ -32,7 +31,7 @@ public enum WeatherCondtion {
             return "Storm"
         }
     }
-    
+
     var imageName: String {
         switch self {
         case .sunny:
@@ -67,11 +66,10 @@ public enum WeatherCondtion {
 }
 
 struct HourlyWeatherView: View {
-    
     var temp: Double
     var condition: String
     var hour: Int
-    
+
     var body: some View {
         VStack {
             Text("\(Int(temp)) °")

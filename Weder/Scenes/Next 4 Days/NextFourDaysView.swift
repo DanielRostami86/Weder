@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct NextFourDaysView: View {
-    
     @EnvironmentObject var viewModel: WeatherForecastViewModel
-    
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -23,15 +22,13 @@ struct NextFourDaysView: View {
                     }
                     .padding()
                     ScrollView {
-                        VStack {
-                            NextFourDayHeaderView(tomorrowWeather: viewModel.tomorrowWeather)
-                                .frame(height: geometry.size.height * 0.5)
-                        }
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30)
-                                .foregroundColor(.gray)
-                                .opacity(0.08)
-                        )
+                        NextFourDayHeaderView(tomorrowWeather: viewModel.tomorrowWeather)
+                            .frame(height: geometry.size.height * 0.5)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .foregroundColor(.gray)
+                                    .opacity(0.08)
+                            )
                         ForEach(viewModel.nextDaysWeather) { nextDay in
                             DailyForecastView(weekdayName: nextDay.weekday, dailyWeather: nextDay.forcast)
                                 .listRowBackground(Color.clear)
@@ -45,9 +42,8 @@ struct NextFourDaysView: View {
 }
 
 struct NextFourDayHeaderView: View {
-    
     var tomorrowWeather: CurrentWeather?
-    
+
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 20) {
@@ -81,23 +77,31 @@ struct NextFourDayHeaderView: View {
                             .bold()
                     }
                 }
-                .shadow(color: .primary, radius: 100, x: -30, y: 0)
+                .shadow(color: .primary, radius: 100, x: 100, y: 100)
                 .padding()
                 WindHumidityRainView(weather: tomorrowWeather?.windHumidityRain)
             }
         }
     }
-    
+
     private func weatherImageWidth(size: CGSize) -> CGFloat {
         return size.width * 0.35
+    }
+
+    struct NextFourDayHeaderView_Previews: PreviewProvider {
+        static var previews: some View {
+            Group {
+                NextFourDayHeaderView(tomorrowWeather: CurrentWeather.sample())
+                    .preferredDevice(.iPhoneSE, colorScheme: .dark)
+            }
+        }
     }
 }
 
 struct DailyForecastView: View {
-    
     var weekdayName: String = "Mon"
     var dailyWeather: CurrentWeather = .sample()
-    
+
     var body: some View {
         HStack {
             Text(weekdayName)
@@ -140,7 +144,6 @@ struct TempratureView: View {
 }
 
 struct NextFourDaysView_Previews: PreviewProvider {
-    
     static var viewModel: WeatherForecastViewModel {
         let viewModel = WeatherForecastViewModel()
         viewModel.tomorrowWeather = .sample()
@@ -149,7 +152,7 @@ struct NextFourDaysView_Previews: PreviewProvider {
                                      .init(forcast: .sample(), weekday: "Mon")]
         return viewModel
     }
-    
+
     static var previews: some View {
         Group {
             NextFourDaysView()

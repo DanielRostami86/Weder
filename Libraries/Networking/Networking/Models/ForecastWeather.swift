@@ -5,11 +5,10 @@
 //  Created by Daniel Rostami on 14/8/2022.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 public struct ForecastWeather: Decodable {
-    
     public let list: [Forecast]?
     public let city: City?
 
@@ -19,17 +18,17 @@ public struct ForecastWeather: Decodable {
         public let wind: Wind?
         public let clouds: Clouds?
         public let dt_txt: String?
-        
+
         public var firstWeather: Weather? {
             return weather?.first
         }
-        
+
         public var dateHourly: Date {
             guard let stringDate = dt_txt else { return Date() }
             guard let finalDate = stringDate.dateFromString(from: .YYYY_MM_DD_HH_MM_SS, to: .dd_MMM_yyyy_hh_mm) else { return Date() }
             return finalDate
         }
-        
+
         public var dateOnly: Date {
             guard let stringDate = dt_txt else { return Date() }
             guard let finalDate = stringDate.dateFromString(from: .YYYY_MM_DD_HH_MM_SS, to: .YYYY_MM_DD) else { return Date() }
@@ -49,9 +48,9 @@ public struct City: Decodable {
 public struct Wind: Decodable {
     public let speed: Double?
     public let deg: Int?
-    
+
     public static func sample() -> Wind {
-        return Wind.init(speed: 12, deg: 30)
+        return Wind(speed: 12, deg: 30)
     }
 }
 
@@ -62,7 +61,7 @@ public struct WeatherMain: Decodable {
     public let temp_max: Double?
     public let pressure: Int?
     public let humidity: Int?
-    
+
     public static func sample() -> WeatherMain {
         return WeatherMain(temp: 14, feels_like: 16, temp_min: 10, temp_max: 18, pressure: 14, humidity: 60)
     }
