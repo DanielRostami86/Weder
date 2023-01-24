@@ -44,7 +44,6 @@ struct WeatherPlaceholder: View {
                     .shimmer()
                     .padding(.bottom, 6)
 
-
                 Group {
                     Text("23")
                         .font(.system(size: 40))
@@ -52,14 +51,12 @@ struct WeatherPlaceholder: View {
                         .dynamicTypeSize(.medium)
                         .accessibilityHidden(true)
 
-
                     Text("really")
                         .font(.system(size: 28))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(2)
                         .accessibilityHidden(true)
-
                 }
             }
         }

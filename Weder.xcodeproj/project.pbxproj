@@ -28,6 +28,7 @@
 		A7D7335828A89D7B0087CD3C /* WeatherForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7335728A89D7B0087CD3C /* WeatherForecastViewModel.swift */; };
 		A7FFF2062978FE3B00A5CF88 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFF2052978FE3B00A5CF88 /* LoadingView.swift */; };
 		A7FFF208297909C800A5CF88 /* ShimmeringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFF207297909C800A5CF88 /* ShimmeringView.swift */; };
+		A7FFF20B297F99BA00A5CF88 /* mainTest.yml in Resources */ = {isa = PBXBuildFile; fileRef = A7FFF20A297F99BA00A5CF88 /* mainTest.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		A7D7335728A89D7B0087CD3C /* WeatherForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastViewModel.swift; sourceTree = "<group>"; };
 		A7FFF2052978FE3B00A5CF88 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A7FFF207297909C800A5CF88 /* ShimmeringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringView.swift; sourceTree = "<group>"; };
+		A7FFF20A297F99BA00A5CF88 /* mainTest.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = mainTest.yml; path = .github/workflows/mainTest.yml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				A724A2F328AA687A00D09C6F /* View Model */,
 				A7D7324B28A7D2150087CD3C /* Scenes */,
 				A7D7323B28A7B35E0087CD3C /* Extensions */,
+				A7FFF209297F999300A5CF88 /* Workflows CI */,
 				A7C3C7DD28A11AE40086F3CC /* Assets.xcassets */,
 			);
 			path = Weder;
@@ -256,6 +259,14 @@
 				A7D732C828A882820087CD3C /* Alamofire.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7FFF209297F999300A5CF88 /* Workflows CI */ = {
+			isa = PBXGroup;
+			children = (
+				A7FFF20A297F99BA00A5CF88 /* mainTest.yml */,
+			);
+			path = "Workflows CI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7C3C7DE28A11AE40086F3CC /* Assets.xcassets in Resources */,
+				A7FFF20B297F99BA00A5CF88 /* mainTest.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
