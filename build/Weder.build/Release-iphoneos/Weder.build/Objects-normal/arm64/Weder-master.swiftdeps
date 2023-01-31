@@ -1,0 +1,18 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "7724d9e02713bb2fbf9811c7e53101ead255a226ff03f7e795934387ea5df76a"
+build_start_time: [1675137232, 570683956]
+build_end_time: [1675137232, 614624977]
+inputs:
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Components/HourlyWeatherView.swift": !dirty [1674535121, 288138389]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Components/LoadingView.swift": !dirty [1674535397, 587678432]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Components/ShimmeringView.swift": !dirty [1674535121, 288685083]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Components/WindHumidityRainView.swift": !dirty [1674535121, 289087295]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Extensions/Array+ext.swift": !dirty [1674535121, 289443254]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Extensions/View+Ext.swift": !dirty [1674535121, 289791822]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Location/LocationManager.swift": !dirty [1674535121, 290148258]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Scenes/Dashboard/Dashboard Header Menu/NavigationBarView.swift": !dirty [1674535121, 290546178]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Scenes/Dashboard/DashboardView.swift": !dirty [1674535121, 290940761]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Scenes/Dashboard/Status View/DashboardStatusView.swift": !dirty [1674537848, 277965068]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/Scenes/Next 4 Days/NextFourDaysView.swift": !dirty [1674535121, 291709899]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/View Model/WeatherForecastViewModel.swift": !dirty [1674535121, 292249202]
+  "/Users/daniel/Documents/AppDevelopment/Personals/Weder/Weder/WederApp.swift": !dirty [1660540855, 155384063]

@@ -7,7 +7,7 @@
 
 import Combine
 import Foundation
-import Networking
+import NetworkProvider
 
 typealias Forecast = ForecastWeather.Forecast
 

@@ -5,7 +5,7 @@
 //  Created by Daniel Rostami on 13/8/2022.
 //
 
-import Networking
+import NetworkProvider
 import SwiftUI
 
 public enum WindHumidityRain {
