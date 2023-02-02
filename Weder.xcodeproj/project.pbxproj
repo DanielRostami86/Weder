@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		0309965428A128FD00809CC7 /* DashboardStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0309965328A128FD00809CC7 /* DashboardStatusView.swift */; };
 		0389CE4E28AB987400B47488 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389CE4D28AB987400B47488 /* LocationManager.swift */; };
-		A70DF8D72988D2C30048D74F /* NetworkProvider in Frameworks */ = {isa = PBXBuildFile; productRef = A70DF8D62988D2C30048D74F /* NetworkProvider */; };
+		A70DF8DD298B50C50048D74F /* NetworkProvider in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A70DF8DB298B4F750048D74F /* NetworkProvider */; };
+		A70DF8DF298B50CF0048D74F /* NetworkProvider in Frameworks */ = {isa = PBXBuildFile; productRef = A70DF8DE298B50CF0048D74F /* NetworkProvider */; };
 		A724A2F228A9F1D000D09C6F /* Array+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724A2F128A9F1D000D09C6F /* Array+ext.swift */; };
 		A7C3C7DA28A11AE20086F3CC /* WederApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3C7D928A11AE20086F3CC /* WederApp.swift */; };
 		A7C3C7DE28A11AE40086F3CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C3C7DD28A11AE40086F3CC /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A70DF8DD298B50C50048D74F /* NetworkProvider in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +64,7 @@
 /* Begin PBXFileReference section */
 		0309965328A128FD00809CC7 /* DashboardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStatusView.swift; sourceTree = "<group>"; };
 		0389CE4D28AB987400B47488 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A70DF8DB298B4F750048D74F /* NetworkProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkProvider; sourceTree = "<group>"; };
 		A724A2F128A9F1D000D09C6F /* Array+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ext.swift"; sourceTree = "<group>"; };
 		A7C3C7D628A11AE20086F3CC /* Weder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C3C7D928A11AE20086F3CC /* WederApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WederApp.swift; sourceTree = "<group>"; };
@@ -80,7 +83,6 @@
 		A7D7324828A7CF450087CD3C /* NextFourDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextFourDaysView.swift; sourceTree = "<group>"; };
 		A7D7324D28A7D3FE0087CD3C /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		A7D7335728A89D7B0087CD3C /* WeatherForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastViewModel.swift; sourceTree = "<group>"; };
-		A7F369252988CDDC008DF711 /* NetworkProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkProvider; sourceTree = "<group>"; };
 		A7FFF2052978FE3B00A5CF88 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A7FFF207297909C800A5CF88 /* ShimmeringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringView.swift; sourceTree = "<group>"; };
 		A7FFF20A297F99BA00A5CF88 /* mainTest.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = mainTest.yml; path = .github/workflows/mainTest.yml; sourceTree = SOURCE_ROOT; };
@@ -91,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A70DF8D72988D2C30048D74F /* NetworkProvider in Frameworks */,
+				A70DF8DF298B50CF0048D74F /* NetworkProvider in Frameworks */,
 				A7D45DF028B728D7005FBAF4 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +123,14 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		A70DF8DA298B4F750048D74F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A70DF8DB298B4F750048D74F /* NetworkProvider */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		A724A2F328AA687A00D09C6F /* View Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +142,7 @@
 		A7C3C7CD28A11AE20086F3CC = {
 			isa = PBXGroup;
 			children = (
-				A7F369252988CDDC008DF711 /* NetworkProvider */,
+				A70DF8DA298B4F750048D74F /* Packages */,
 				A7C3C7D828A11AE20086F3CC /* Weder */,
 				A7C3C7E928A11AE40086F3CC /* WederTests */,
 				A7C3C7F328A11AE40086F3CC /* WederUITests */,
@@ -284,7 +294,7 @@
 			);
 			name = Weder;
 			packageProductDependencies = (
-				A70DF8D62988D2C30048D74F /* NetworkProvider */,
+				A70DF8DE298B50CF0048D74F /* NetworkProvider */,
 			);
 			productName = Weder;
 			productReference = A7C3C7D628A11AE20086F3CC /* Weder.app */;
@@ -1310,7 +1320,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A70DF8D62988D2C30048D74F /* NetworkProvider */ = {
+		A70DF8DE298B50CF0048D74F /* NetworkProvider */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkProvider;
 		};
