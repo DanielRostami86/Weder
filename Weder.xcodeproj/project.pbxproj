@@ -79,7 +79,6 @@
 		A7D7324228A7BCFD0087CD3C /* WindHumidityRainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindHumidityRainView.swift; sourceTree = "<group>"; };
 		A7D7324828A7CF450087CD3C /* NextFourDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextFourDaysView.swift; sourceTree = "<group>"; };
 		A7D7324D28A7D3FE0087CD3C /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
-		A7D732C828A882820087CD3C /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		A7D7335728A89D7B0087CD3C /* WeatherForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastViewModel.swift; sourceTree = "<group>"; };
 		A7F369252988CDDC008DF711 /* NetworkProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkProvider; sourceTree = "<group>"; };
 		A7FFF2052978FE3B00A5CF88 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -252,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				A7D45DEF28B728D7005FBAF4 /* ExternalAccessory.framework */,
-				A7D732C828A882820087CD3C /* Alamofire.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
