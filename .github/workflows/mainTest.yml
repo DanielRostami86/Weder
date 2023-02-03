@@ -17,8 +17,9 @@ jobs:
         - Label-1
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build
-      run: swift build -v
+#      run: swift build -v
+        run: pwd
     - name: Run tests
       run: swift test -v
