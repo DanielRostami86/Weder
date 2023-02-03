@@ -63,6 +63,7 @@
 		0309965328A128FD00809CC7 /* DashboardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStatusView.swift; sourceTree = "<group>"; };
 		0389CE4D28AB987400B47488 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A724A2F128A9F1D000D09C6F /* Array+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ext.swift"; sourceTree = "<group>"; };
+		A72805EE298CC4FA005B4A5D /* NetworkProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkProvider; sourceTree = "<group>"; };
 		A7C3C7D628A11AE20086F3CC /* Weder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C3C7D928A11AE20086F3CC /* WederApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WederApp.swift; sourceTree = "<group>"; };
 		A7C3C7DD28A11AE40086F3CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,9 +129,18 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		A72805ED298CC4FA005B4A5D /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A72805EE298CC4FA005B4A5D /* NetworkProvider */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		A7C3C7CD28A11AE20086F3CC = {
 			isa = PBXGroup;
 			children = (
+				A72805ED298CC4FA005B4A5D /* Packages */,
 				A7C3C7D828A11AE20086F3CC /* Weder */,
 				A7C3C7E928A11AE40086F3CC /* WederTests */,
 				A7C3C7F328A11AE40086F3CC /* WederUITests */,
