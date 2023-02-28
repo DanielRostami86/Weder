@@ -1,0 +1,25 @@
+desc "Create on Developer Portal and AppStore Connect"
+lane :create_app do
+	create_app_online # aka produce
+end
+
+platform :ios do
+
+  desc "Sync signing"
+  lane :signing do
+	sync_code_signing # aka match
+	mapping = Actions.lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
+	update_code_signing_settings(profile_name: mapping[ENV['MATCH_APP_IDENTIFIER']])
+  end
+
+  desc "Build binary"
+  lane :build do
+	signing
+  end
+
+  desc "Release"
+  lane :release do
+	build 
+  end
+
+end
