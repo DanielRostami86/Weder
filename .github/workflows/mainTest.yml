@@ -17,10 +17,7 @@ jobs:
         - Label-1
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: xcodebuild -scheme Weder
-      
+  
     - name: Check Secrets
       run: |
-        echo "Danieelll"
+        echo "Danieelll secret = ${{ secrets.FASTLANE_ITC_TEAM_NAME }}"
