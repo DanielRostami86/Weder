@@ -24,10 +24,8 @@ jobs:
         echo "Danieelll secret = ${{ secrets.FASTLANE_ITC_TEAM_NAME }}"
 
   check:
-      runs-on:
-        - self-hosted
-        - Label-1
-
+      runs-on: [self-hosted, macos]
+      
       steps:
       - name: Check Secrets
         run: |
