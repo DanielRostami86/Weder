@@ -22,4 +22,5 @@ jobs:
       run: xcodebuild -scheme Weder
       
     - name: Check Secrets
+        run:
         echo "Danieelll"
