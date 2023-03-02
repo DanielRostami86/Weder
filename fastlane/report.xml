@@ -4,10 +4,5 @@
     
     
     
-      
-      <testcase classname="fastlane.lanes" name="0: sync_code_signing" time="20.940144">
-        
-      </testcase>
-    
   </testsuite>
 </testsuites>
