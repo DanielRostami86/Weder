@@ -12,9 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on:
-        - self-hosted
-        - Label-1
+    runs-on: [self-hosted, macos]
 
     steps:
     - uses: actions/checkout@v3
