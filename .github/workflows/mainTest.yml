@@ -21,12 +21,20 @@ jobs:
       
     - name: Check Secrets
       run: |
-        echo "Danieelll secret = ${{ secrets.FASTLANE_ITC_TEAM_NAME }}"
-
+      if ${{ secrets.DANI_TEST }} == 'DANI TEST IS TEST';
+        echo "secret is";
+      else 
+        echo "secret is not DANI TEST IS TEST"; 
+      fi
+        
   check:
       runs-on: [macos-latest]
 
       steps:
       - name: Check Secrets
         run: |
-          echo "Danieelll secret = ${{ secrets.FASTLANE_ITC_TEAM_NAME }}"
+            if ${{ secrets.DANI_TEST }} == 'DANI TEST IS TEST';
+              echo "secret is";
+            else 
+              echo "secret is not DANI TEST IS TEST"; 
+            fi
