@@ -5,8 +5,13 @@ end
 
 platform :ios do
 
+  before_all do
+    Dotenv.load ".env.ios"
+  end
+  
   desc "Sync signing"
   lane :signing do
+    sync_code_signing
     puts "Hi there Daniel"
     puts ENV['FASTLANE_ITC_TEAM_NAME']
   end
