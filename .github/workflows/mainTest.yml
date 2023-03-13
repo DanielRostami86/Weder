@@ -33,7 +33,7 @@ jobs:
       steps:
       - name: Check Secrets
         run: |
-            if ${{ secrets.DANI_TEST }} == 'DANI TEST IS TEST';
+            if ${{ secrets.DANI_TEST }} == 'DANI TEST IS TEST'; then
               echo "secret is";
             else 
               echo "secret is not DANI TEST IS TEST"; 
