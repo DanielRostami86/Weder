@@ -21,11 +21,11 @@ jobs:
       
     - name: Check Secrets
       run: |
-      if ${{ secrets.DANI_TEST }} == 'DANI TEST IS TEST';
+       if ${{ secrets.DANI_TEST }} == 'DANI TEST IS TEST'; 
         echo "secret is";
-      else 
+       else 
         echo "secret is not DANI TEST IS TEST"; 
-      fi
+       fi
         
   check:
       runs-on: [macos-latest]
