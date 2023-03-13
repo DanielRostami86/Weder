@@ -33,7 +33,7 @@ jobs:
       steps:
       - name: Check Secrets
         run: |
-            if [[ ${{ secrets.STEW_TEST }} == "We are checking the secrets here you idiot" ]]; then 
+            if [[ "${{ secrets.STEW_TEST }}" == "We are checking the secrets here you idiot" ]]; then 
               echo "secret is connected";
             else 
               echo "secret is not what we want"; 
