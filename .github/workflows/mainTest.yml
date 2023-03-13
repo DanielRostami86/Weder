@@ -21,7 +21,7 @@ jobs:
       
     - name: Check Secrets
       run: |
-       if ${{ secrets.DANI_TEST }} == 'DANI TEST IS TEST'; 
+       if ${{ secrets.DANI_TEST }} == "DANI TEST IS TEST"; then 
         echo "secret is";
        else 
         echo "secret is not DANI TEST IS TEST"; 
@@ -33,8 +33,8 @@ jobs:
       steps:
       - name: Check Secrets
         run: |
-            if ${{ secrets.DANI_TEST }} == 'DANI TEST IS TEST'; then
-              echo "secret is";
+            if ${{ secrets.STEW_TEST }} == "We are checking the secrets here you idiot"; then
+              echo "secret is connected";
             else 
-              echo "secret is not DANI TEST IS TEST"; 
+              echo "secret is not what we want"; 
             fi
