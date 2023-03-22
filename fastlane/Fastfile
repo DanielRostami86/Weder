@@ -23,7 +23,7 @@ platform :ios do
 
   desc "Release"
   lane :release do
-	  build 
+    puts "Hi there Daniel I am in released"
   end
 
 end
