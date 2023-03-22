@@ -16,25 +16,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build
-      run: xcodebuild -scheme Weder-TEST
-      
-    - name: Check Secrets
-      run: |
-       if ${{ secrets.DANI_TEST }} == "DANI TEST IS TEST"; then 
-        echo "secret is";
-       else 
-        echo "secret is not DANI TEST IS TEST"; 
-       fi
-        
-  check:
-      runs-on: [macos-latest]
+    - name: Release to TestFlight
 
-      steps:
-      - name: Check Secrets
-        run: |
-            if [[ "${{ secrets.STEW_TEST }}" == "We are checking the secrets here you idiot" ]]; then 
-              echo "secret is connected";
-            else 
-              echo "secret is not what we want"; 
-            fi
+      run: |
+          /usr/local/bin/fastlane release
+      env:
+        LANG: en_US.UTF-8
+        LANGUAGE: en_US.UTF-8
+        LC_ALL: en_US.UTF-8
+        SPACESHIP_SKIP_2FA_UPGRADE: 1
+        GITHUB_RUN_ID: ${{ github.run_id }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
