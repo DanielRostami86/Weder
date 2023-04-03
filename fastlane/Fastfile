@@ -5,25 +5,23 @@ end
 
 platform :ios do
 
-  before_all do
-    Dotenv.load ".env.ios"
-  end
-  
   desc "Sync signing"
   lane :signing do
     sync_code_signing
-    puts "Hi there Daniel"
-    puts ENV['FASTLANE_ITC_TEAM_NAME']
+    mapping = Actions.lane_context [ SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
+    update_code_signing_settings(profile_name: mapping[ENV['MATCH_APP_IDENTIFIER']])
   end
 
   desc "Build binary"
   lane :build do
 	  signing
+    gym
   end
 
   desc "Release"
   lane :release do
-    puts "Hi there Daniel I am in released"
+    build
+    deliver
   end
 
 end
