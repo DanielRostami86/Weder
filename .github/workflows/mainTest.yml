@@ -23,7 +23,7 @@ jobs:
         LANG: en_US.UTF-8
         LANGUAGE: en_US.UTF-8
         LC_ALL: en_US.UTF-8
-        SPACESHIP_SKIP_2FA_UPGRADE: 0
+        SPACESHIP_SKIP_2FA_UPGRADE: 1
         GITHUB_RUN_ID: ${{ github.run_id }}
         MATCH_USERNAME: ${{ secrets.MATCH_USERNAME }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
