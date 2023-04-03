@@ -23,8 +23,9 @@ jobs:
         LANG: en_US.UTF-8
         LANGUAGE: en_US.UTF-8
         LC_ALL: en_US.UTF-8
-        SPACESHIP_SKIP_2FA_UPGRADE: 1
+        SPACESHIP_SKIP_2FA_UPGRADE: 0
         GITHUB_RUN_ID: ${{ github.run_id }}
         MATCH_USERNAME: ${{ secrets.MATCH_USERNAME }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        SPACESHIP_2FA_SMS_DEFAULT_PHONE_NUMBER: ${{ secrets.DEFAULT_NUMBER }}
