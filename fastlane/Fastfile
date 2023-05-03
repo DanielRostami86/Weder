@@ -5,8 +5,18 @@ end
 
 platform :ios do
 
+  desc "Generate App Store Connect API token"
+  private_lane :app_store_connect_token do
+    app_store_connect_api_key(
+      key_id: ENV['APP_STORE_CONNECT_API_KEY_KEY_ID'],
+      issuer_id: ENV['APP_STORE_CONNECT_API_KEY_ISSUER_ID'],
+      key_content: ENV['APP_STORE_CONNECT_API_KEY_KEY_CONTENT']
+    )
+  end
+
   desc "Sync signing"
   lane :signing do
+    app_store_connect_token
     sync_code_signing
     mapping = Actions.lane_context [ SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
     update_code_signing_settings(profile_name: mapping[ENV['MATCH_APP_IDENTIFIER']])
