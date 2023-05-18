@@ -39,15 +39,14 @@ platform :ios do
       match
     end    
     update_code_signing_settings(
-      profile_name: "match AppStore danydev.com.au.weder.prod 1684378144", # shouldn't be an array.
-      scheme: "Weder-PROD"
+      profile_name: "match AppStore danydev.com.au.weder.prod 1684378144" # shouldn't be an array.
     )
   end
 
   desc "Build binary"
   lane :build do
 	  signing
-    gym
+    gym(scheme: "Weder-PROD")
   end
 
   desc "Release"
