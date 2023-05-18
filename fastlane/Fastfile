@@ -26,15 +26,14 @@ platform :ios do
       add_to_search_list: true
 		)
   end
-
+  
   desc "Xcode installation"
-  lane : xcode_install do
-    xcode_install(
+  lane :xcode_install do
+	  xcode_install(
       version: "14.0",
       download_retry_attempts :3
     )
   end
-
 
   desc "Sync signing"
   lane :signing do
