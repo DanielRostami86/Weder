@@ -5,7 +5,7 @@ end
 
 platform :ios do
 
-  desc "Generate App Store Connect API token"
+  desc "Generate App Store Connect API token" # to get rid of 2FA
   private_lane :app_store_connect_token do
     app_store_connect_api_key(
       key_id: ENV['APP_STORE_CONNECT_API_KEY_KEY_ID'],
@@ -14,10 +14,30 @@ platform :ios do
     )
   end
 
+  desc "Create new Keychain for signing"
+  lane :setup_github_ci do
+		create_keychain(
+			name: "GitHubKeychain",
+			password: ENV['MATCH_KEYCHAIN_PASSWORD'],
+			default_keychain: true,
+			unlock: true,
+			timeout: 3600,
+			lock_when_sleeps: false,
+      add_to_search_list: true
+		)
+  end
+
   desc "Sync signing"
   lane :signing do
     app_store_connect_token
-    sync_code_signing
+    if is_ci
+      match(
+        keychain_name: "GitHubKeychain",
+        keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD']
+      )
+    else
+      match
+    end    
     mapping = Actions.lane_context [ SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
     update_code_signing_settings(profile_name: mapping[ENV['MATCH_APP_IDENTIFIER']])
   end
