@@ -16,7 +16,6 @@ platform :ios do
 
   desc "Create new Keychain for signing"
   lane :setup_github_ci do
-    xcversion(version: "14.0")
 		create_keychain(
 			name: "GitHubKeychain",
 			password: ENV['MATCH_PASSWORD'],
@@ -28,11 +27,20 @@ platform :ios do
 		)
   end
 
+  desc "Xcode installation"
+  lane : xcode_install do
+    xcode_install(
+      version: "14.0",
+      download_retry_attempts :3
+    )
+  end
+
+
   desc "Sync signing"
   lane :signing do
     app_store_connect_token
-    update_code_signing_settings(
-      profile_name: "match AppStore danydev.com.au.weder.prod 1684378144" # shouldn't be an array.
+    updasigning_settings(
+      profile_namte_code_e: "match AppStore danydev.com.au.weder.prod 1684378144" # shouldn't be an array.
     )
     if is_ci
       match(
