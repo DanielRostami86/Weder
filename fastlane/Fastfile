@@ -30,17 +30,18 @@ platform :ios do
   desc "Sync signing"
   lane :signing do
     app_store_connect_token
+    update_code_signing_settings(
+      profile_name: "match AppStore danydev.com.au.weder.prod 1684378144" # shouldn't be an array.
+    )
     if is_ci
       match(
         keychain_name: "GitHubKeychain",
-        keychain_password: ENV['MATCH_PASSWORD']
+        keychain_password: ENV['MATCH_PASSWORD'],
+        readonly: true
       )
     else
       match
     end    
-    update_code_signing_settings(
-      profile_name: "match AppStore danydev.com.au.weder.prod 1684378144" # shouldn't be an array.
-    )
   end
 
   desc "Build binary"
