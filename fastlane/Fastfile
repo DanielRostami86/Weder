@@ -16,6 +16,7 @@ platform :ios do
 
   desc "Create new Keychain for signing"
   lane :setup_github_ci do
+    xcversion(version: "14.0")
 		create_keychain(
 			name: "GitHubKeychain",
 			password: ENV['MATCH_PASSWORD'],
