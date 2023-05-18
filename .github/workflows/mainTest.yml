@@ -28,10 +28,11 @@ jobs:
 
     - name: Release to TestFlight
 
-      run: bundle install
-      run: bundle exec fastlane ios setup_github_ci
-      run: bundle exec fastlane ios build 
-      
+      run: | 
+        bundle install
+        bundle exec fastlane ios setup_github_ci
+        bundle exec fastlane ios build
+
       env:
         LANG: en_US.UTF-8
         LANGUAGE: en_US.UTF-8
