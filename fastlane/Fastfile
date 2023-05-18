@@ -27,10 +27,10 @@ platform :ios do
 		)
   end
 
-  desc "Xcode installation"
-  lane :xcode_install do
-	  xcode_install(version: "14.0")
-  end
+  # desc "Xcode installation"
+  # lane :xcode_install do
+	#   xcode_install(version: "14.0")
+  # end
 
   desc "Sync signing"
   lane :signing do
