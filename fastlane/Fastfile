@@ -18,7 +18,7 @@ platform :ios do
   lane :setup_github_ci do
 		create_keychain(
 			name: "GitHubKeychain",
-			password: ENV['MATCH_KEYCHAIN_PASSWORD'],
+			password: ENV['MATCH_PASSWORD'],
 			default_keychain: true,
 			unlock: true,
 			timeout: 3600,
@@ -33,7 +33,7 @@ platform :ios do
     if is_ci
       match(
         keychain_name: "GitHubKeychain",
-        keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD']
+        keychain_password: ENV['MATCH_PASSWORD']
       )
     else
       match
