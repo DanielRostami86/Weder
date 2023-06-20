@@ -33,7 +33,6 @@ jobs:
 
       run: | 
         bundle install
-        bundle exec fastlane ios xcode
         bundle exec fastlane ios setup_github_ci
         bundle exec fastlane ios build
 
