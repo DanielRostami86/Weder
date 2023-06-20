@@ -17,7 +17,7 @@ platform :ios do
   desc "Create new Keychain for signing"
   lane :setup_github_ci do
 		create_keychain(
-			name: "GitHubKeychain",
+			name: "CI-Keychain",
 			password: ENV['MATCH_PASSWORD'],
 			default_keychain: true,
 			unlock: true,
@@ -40,7 +40,7 @@ platform :ios do
     # )
     if is_ci
       match(
-        keychain_name: "GitHubKeychain",
+        keychain_name: "CI-Keychain",
         keychain_password: ENV['MATCH_PASSWORD'],
         readonly: true
       )
