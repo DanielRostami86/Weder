@@ -29,15 +29,15 @@ platform :ios do
 
   desc "Xcode installation"
   lane :xcode do
-	  xcode_install(version: "14.0", username: ENV['MATCH_USERNAME'])
+	  xcodes(version: "14.0")
   end
 
   desc "Sync signing"
   lane :signing do
     app_store_connect_token
-    updasigning_settings(
-      profile_namte_code_e: "match AppStore danydev.com.au.weder.prod 1684378144" # shouldn't be an array.
-    )
+    # update_code_signing_settings(
+    #   profile_namte_code_e: "match AppStore danydev.com.au.weder.prod 1684378144" # shouldn't be an array.
+    # )
     if is_ci
       match(
         keychain_name: "GitHubKeychain",
