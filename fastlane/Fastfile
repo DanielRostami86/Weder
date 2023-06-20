@@ -29,7 +29,7 @@ platform :ios do
 
   desc "Xcode installation"
   lane :xcode do
-	  xcode_install(version: "14.0")
+	  xcode_install(version: "14.0", username: ENV['MATCH_USERNAME'])
   end
 
   desc "Sync signing"
