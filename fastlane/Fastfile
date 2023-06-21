@@ -36,9 +36,6 @@ platform :ios do
   desc "Sync signing"
   lane :signing do
     app_store_connect_token
-    # update_code_signing_settings(
-    #   profile_namte_code_e: "match AppStore danydev.com.au.weder.prod 1684378144" # shouldn't be an array.
-    # )
     if is_ci
       match(
         keychain_name: "CI-Keychain",
@@ -50,16 +47,26 @@ platform :ios do
     end    
   end
 
+  desc "Manual Signing"
+  lane :set_manual_signing do
+    update_code_signing_settings(
+      targets: "Weder",
+      bundle_identifier: "danydev.com.au.weder.prod",
+      profile_name: "match AppStore danydev.com.au.weder.prod"
+    )
+  end
+
   desc "Build binary"
   lane :build do
 	  signing
+    set_manual_signing
     gym(scheme: "Weder-PROD")
   end
 
   desc "Release"
   lane :release do
     build
-    deliver
+    pilot
   end
 
 end
