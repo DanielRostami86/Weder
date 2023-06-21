@@ -52,7 +52,7 @@ platform :ios do
     update_code_signing_settings(
       targets: "Weder",
       bundle_identifier: "danydev.com.au.weder.prod",
-      profile_name: "match AppStore danydev.com.au.weder.prod"
+      profile_name: "match AppStore danydev.com.au.weder.prod 1684378144"
     )
   end
 
