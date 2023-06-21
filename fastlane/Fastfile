@@ -16,7 +16,7 @@ platform :ios do
 
   desc "Create new Keychain for signing"
   lane :setup_github_ci do
-    delete_keychain(name: "CI-Keychain")
+    # delete_keychain(name: "CI-Keychain")
 		create_keychain(
 			name: "CI-Keychain",
 			password: ENV['MATCH_PASSWORD'],
@@ -28,10 +28,10 @@ platform :ios do
 		)
   end
 
-  desc "Xcode installation"
-  lane :xcode do
-	  xcodes(version: "14.0")
-  end
+  # desc "Xcode installation"
+  # lane :xcode do
+	#   xcodes(version: "14.0")
+  # end
 
   desc "Sync signing"
   lane :signing do
