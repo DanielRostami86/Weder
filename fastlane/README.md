@@ -26,6 +26,14 @@ Create on Developer Portal and AppStore Connect
 
 ## iOS
 
+### ios setup_github_ci
+
+```sh
+[bundle exec] fastlane ios setup_github_ci
+```
+
+Create new Keychain for signing
+
 ### ios signing
 
 ```sh
@@ -33,6 +41,14 @@ Create on Developer Portal and AppStore Connect
 ```
 
 Sync signing
+
+### ios set_manual_signing
+
+```sh
+[bundle exec] fastlane ios set_manual_signing
+```
+
+Manual Signing
 
 ### ios build
 

@@ -19,3 +19,8 @@ xcuserdata/
 *.moved-aside
 Carthage/Build/
 vendor
+fastlane/.env.secret
+*.zip
+Weder.ipa
+fastlane/report.xml
+fastlane/report.xml
