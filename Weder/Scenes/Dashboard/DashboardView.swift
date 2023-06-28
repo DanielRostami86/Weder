@@ -9,8 +9,8 @@ import SwiftUI
 import UIKit
 
 struct DashboardView: View {
-    @ObservedObject var viewModel: WeatherForecastViewModel
-    @ObservedObject var locationManager = LocationManager()
+    @StateObject var viewModel: WeatherForecastViewModel
+    @StateObject var locationManager = LocationManager()
 
     @ViewBuilder
     var dashboardContent: some View {
@@ -56,10 +56,8 @@ struct DashboardView: View {
                                         .environmentObject(viewModel)
                                         .navigationBarHidden(true)
                                 } label: {
-                                    NextSevenDayLinkView {
-                                        self.viewModel.isFourDayActive.toggle()
-                                    }
-                                    .padding(.horizontal, 16)
+                                    NextSevenDayLinkView
+                                        .padding(.horizontal, 16)
                                 }
 
                                 HStack {
@@ -97,17 +95,10 @@ struct DashboardView: View {
             .alert("Enexpected Error", isPresented: $viewModel.hasError) {}
     }
 
-    private func weatherImageWidth(size: CGSize) -> CGFloat {
-        return size.height * 0.15
-    }
-}
-
-struct NextSevenDayLinkView: View {
-    var tapped: () -> Void
-
-    var body: some View {
+    @ViewBuilder
+    private var NextSevenDayLinkView: some View {
         HStack {
-            Text("Today")
+            Text("Today \(viewModel.debugTitle)")
                 .font(.title2)
                 .bold()
             Spacer()
@@ -121,10 +112,14 @@ struct NextSevenDayLinkView: View {
             }
             .foregroundColor(.secondary)
             .onTapGesture {
-                tapped()
+                self.viewModel.isFourDayActive.toggle()
             }
         }
         .padding()
+    }
+
+    private func weatherImageWidth(size: CGSize) -> CGFloat {
+        return size.height * 0.15
     }
 }
 

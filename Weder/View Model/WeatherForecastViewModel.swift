@@ -112,6 +112,14 @@ class WeatherForecastViewModel: ObservableObject {
         let weekDayName = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
         return weekDayName[(comp.weekday ?? 0) - 1]
     }
+
+    var debugTitle: String {
+        #if DEBUG
+            return "debug"
+        #else
+            return "production"
+        #endif
+    }
 }
 
 public struct CurrentWeather: Identifiable {
