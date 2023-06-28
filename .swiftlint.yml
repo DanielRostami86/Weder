@@ -13,6 +13,7 @@ opt_in_rules:
 excluded:
     - Carthage
     - Pods
+    - vendor
     
 # modifying some rules
 
